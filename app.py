@@ -7,7 +7,10 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Load 5% of the data from a file called 'ibid_2020.csv'
-df = pd.read_csv('https://www.indybiosystems.com/datasets/ibid_2020.csv').sample(frac=0.01)
+df = pd.read_csv('(link unavailable)').sample(frac=0.01)
+
+# Convert non-numeric columns to numeric (if possible) or ignore errors
+df = df.apply(pd.to_numeric, errors='ignore')
 
 # Explore the data to understand what we have
 st.write("Data Shape:", df.shape)  # How many rows and columns?
